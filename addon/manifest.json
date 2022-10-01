@@ -26,13 +26,6 @@
     "tabs"
   ],
 
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "calibre-search-chrome@kiwidude.com",
-      "strict_min_version": "1.0"
-    }
-  },
-
   "options_ui": {
     "page": "options/options.html",
     "open_in_tab": false

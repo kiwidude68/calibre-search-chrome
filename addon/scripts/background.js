@@ -216,7 +216,7 @@ function createSearchMenuLink() {
         id: MENU_ID,
         title: chrome.i18n.getMessage('menu_searchLabelInitial'),
         contexts: getAllowedContexts()
-    }, onSuccess());
+    }, () => chrome.runtime.lastError);
 
     chrome.contextMenus.onClicked.addListener((info, tab) => doSearchFromContextMenu(info, tab));
 }
