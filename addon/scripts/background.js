@@ -198,7 +198,7 @@ function getUrlFiletype(url) {
     return url.toUpperCase();
 }
 
-// Set the 'contexts' parameter in chrome.menus.create
+// Set the 'contexts' parameter in chrome.contextMenus.create
 // If in fallback mode, only selection is allowed,
 // else, all applicable contexts are allowed.
 function getAllowedContexts() {

@@ -7,7 +7,7 @@
 This web extension allows you to perform a search against your local [calibre][calibre-url] library for the selected text or links on a web page. 
 
 The search option is available via:
-- your right-click context menu for your selected text or a hyperlink
+- a right-click context menu for your selected text or a hyperlink
 - a toolbar button in the address bar area of your browser
 - a keyboard shortcut `Ctrl + Q`
 

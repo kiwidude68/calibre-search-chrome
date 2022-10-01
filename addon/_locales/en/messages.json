@@ -1,7 +1,7 @@
 {
   "menu_searchLabelInitial": { "message": "Search calibre" },
   "menu_configureText":      { "message": "Configure calibre-search" },
-  "menu_searchLabelText":    { "message": "Search calibre in “$library$”", "placeholders": { "library" : { "content" : "$1" } } },
+  "menu_searchLabelText":    { "message": "Search in “$library$”", "placeholders": { "library" : { "content" : "$1" } } },
   "ellipsis":                { "message": "…" },
   "opt_title":               { "message": "Extension Settings" },
   "opt_nativeAppTitle":      { "message": "Is host application installed?" },
