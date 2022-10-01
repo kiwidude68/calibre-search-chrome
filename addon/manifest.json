@@ -1,0 +1,67 @@
+{
+
+  "manifest_version": 3,
+  "name": "Calibre Search",
+  "description": "Search calibre library using selected text on page",
+  "version": "1.0",
+  "homepage_url": "https://github.com/kiwidude68/calibre-search-chrome",
+  "default_locale": "en",
+
+  "icons": {
+    "16": "icons/calibre-search-16.png",
+    "32": "icons/calibre-search-32.png",
+    "48": "icons/calibre-search-48.png",
+    "128": "icons/calibre-search-128.png"
+  },
+      
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "nativeMessaging",
+    "storage",
+    "tabs"
+  ],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "calibre-search-chrome@kiwidude.com",
+      "strict_min_version": "1.0"
+    }
+  },
+
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": false
+  },
+
+  "commands": {
+    "calibre-search": {
+      "suggested_key": {
+        "default": "Ctrl+Q"
+      },
+      "description": "Search default library using selected text"
+    }
+  },
+
+  "action": {
+    "default_icon": {
+      "16": "icons/calibre-search-16.png",
+      "32": "icons/calibre-search-32.png",
+      "48": "icons/calibre-search-48.png",
+      "128": "icons/calibre-search-128.png"
+    },
+    "default_title": "Calibre Search"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["scripts/content.js"]
+    }
+  ]
+
+}

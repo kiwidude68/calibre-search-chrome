@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="options.css">
+  </head>
+
+<body>
+  <form>
+
+    <h1 class="l10n">opt_title</h1>
+    <div class="d-table w-100 mb-sm">
+      <p class="l10n d-table-cell">opt_nativeAppTitle</p>
+      <div class="d-table-cell text-align-right">
+        <button id="appTest" type="button" class="l10n">btn_testConnectivity</button>
+      </div>
+    </div>
+    <div id="nativeAppSuccess" class="info-box app-success">
+      <h2 class="l10n mb-sm">info_appEnabled</h2>
+      <p id="nativeAppVersion"></p>
+    </div>
+    <div id="nativeAppError" class="info-box app-error">
+      <h2 class="l10n mb-sm">info_appDisabled</h2>
+      <p class="l10n pb-sm">info_appDisabledReason</p>
+      <p>
+        <span class="l10n">info_appDisabledHelp</span> <a href="/_locales/en/help.html" target="_blank" class="l10n" id="helpLinkUrl">help_linkText</a>
+      </p>
+    </div>
+
+    <hr>
+    <div class="d-table w-100 mb-sm">
+      <p>
+        <label>
+          <span class="l10n">opt_libraryName</span>
+          <div class="d-table-cell text-align-right">
+            <input type="text" id="libraryName" name="libraryName">
+          </div>
+        </label>
+      </p>
+    </div>
+    <div class="d-table w-100 mb-sm">
+      <p>
+        <label>
+          <span class="l10n d-table-cell valign-top">opt_replaceExpressions</span>
+          <div class="d-table-cell text-align-right valign-middle">
+            <textarea id="replaceExpressions" name="replaceExpressions" rows="5"></textarea>
+          </div>
+        </label>
+      </p>
+    </div>
+    <div class="w-100 mb-sm">
+      <p class="text-align-right">
+        <span class="l10n" id="saveStatus">info_savedOptions</span>
+        <button id="save" type="button" class="l10n">btn_Save</button>
+      </p>
+    </div>
+
+    <hr>
+    <div class="info-box info">
+      <h2 class="l10n mb-sm">info_title</h2>
+      <p>
+        <span class="l10n">info_search</span>:
+        <span class="key modKey">Ctrl</span> + Q
+      </p>
+    </div>
+
+    <p>
+      <span class="l10n">help_title</span> <a href="/_locales/en/help.html" target="_blank" class="l10n" id="helpLinkUrl">help_linkText</a>
+    </p>
+  </form>
+  <script src="../scripts/l10n.js"></script>
+  <script src="options.js"></script>
+</body>
+
+</html>

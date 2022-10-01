@@ -1,0 +1,221 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --in-content-background: #0c0c0d;
+  --in-content-info-background: #ededf0;
+  --in-content-hr-color: #d7d7db;
+  --in-content-box-border-color: #b5b5b5;
+  --in-content-box-background: #fff;
+  --in-content-border-focus: #0a84ff;
+  --in-content-link-color: #0a8dff;
+  --in-content-link-color-hover: #0060df;
+  --in-content-link-color-active: #003eaa;
+  --in-content-primary-button-background: #0061e0;
+  --in-content-primary-button-background-hover: #0250bb;
+  --in-content-success: #ccf7a8;
+  --in-content-error: #fcdad9;
+}
+
+body {
+  color: var(--in-content-background);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  margin: 0px 30px;
+  min-width: 330px;
+  min-height: 530px;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 300;
+  margin: 0 0 10px 0;
+}
+
+h2 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0;
+}
+
+a {
+  color: var(--in-content-link-color);
+  font-size: inherit;
+  text-decoration: none;
+}
+
+a:active {
+  color: var(--in-content-link-color-active);
+}
+
+a:hover {
+  color: var(--in-content-link-color-hover);
+  text-decoration: underline;
+}
+
+p {
+  margin: 0 0 15px 0;
+}
+
+hr {
+  border-style: solid none none none;
+  border-color: var(--in-content-hr-color);
+  margin: 0 -5px 15px;
+}
+
+input[type="checkbox"] {
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  padding: 1px;
+  border: 1px solid var(--in-content-box-border-color);
+  border-radius: 2px;
+  margin: 0;
+  margin-inline-end: 5px;
+  vertical-align: -5px;
+  background-color: var(--in-content-box-background);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+input[type="checkbox"]:not(:disabled):hover {
+  border-color: var(--in-content-border-focus);
+}
+
+input[type="checkbox"]:checked {
+  background-image: url("../icons/check.svg");
+}
+
+input[type="checkbox"]:disabled {
+  opacity: 0.5;
+}
+.disabled {
+  opacity: 0.4;
+}
+
+input[type="radio"] {
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--in-content-box-border-color);
+  border-radius: 50%;
+  margin: 0;
+  margin-inline-end: 5px;
+  vertical-align: -5px;
+  background-color: var(--in-content-box-background);
+}
+
+input[type="radio"]:not(:disabled):hover {
+  border-color: var(--in-content-border-focus);
+}
+
+input[type="radio"]:checked {
+  background-image: url("../icons/radio.svg");
+}
+
+input[type="text"] {
+  -moz-appearance: none;
+  width: 180px;
+  height: 28px;
+  padding: 4px;
+  border: 1px solid var(--in-content-box-border-color);
+  border-radius: 2px;
+  margin: 0;
+  margin-inline-end: 5px;
+}
+
+textarea {
+  font-size: 13px;
+  -moz-appearance: none;
+  width: 180px;
+  padding: 4px;
+  border: 1px solid var(--in-content-box-border-color);
+  border-radius: 2px;
+  margin: 0;
+  margin-inline-end: 5px;
+  resize: none;
+}
+
+.indent {
+  margin-left: 30px;
+}
+
+.info-box {
+  border-radius: 6px;
+  background-color: var(--in-content-info-background);
+  background-image: url("../icons/info.svg");
+  background-repeat: no-repeat;
+  background-position: 10px 11px;
+  padding: 10px 20px 11px 32px;
+  margin: 0 0 15px 0;
+}
+
+.info-box p {
+  margin: 0 0 0 0;
+}
+
+.info-box, .info {
+  background-color: var(--in-content-info-background);
+  background-image: url("../icons/info.svg");
+}
+
+info-box, .app-success {
+  background-color: var(--in-content-success); 
+  background-image: url("../icons/accept-16.png");
+}
+
+info-box, .app-error {
+  background-color: var(--in-content-error);
+  background-image: url("../icons/failed-16.png");
+}
+
+.key {
+  border: 1px solid var(--in-content-box-border-color);
+  border-bottom-width: 2px;
+  border-radius: 2px;
+  padding: 0 5px 1px 5px;
+  font-size: 13px;
+}
+
+.d-table {
+  display: table;
+}
+.d-table-cell {
+  display: table-cell;
+}
+.w-100 {
+  width: 100%;
+}
+.text-align-right {
+  text-align: right;
+}
+.valign-top {
+  vertical-align: top;
+}
+.valign-middle {
+  vertical-align: middle;
+}
+.mb-sm {
+  margin-bottom: 10px;
+}
+.ml-auto {
+  text-align: right;
+}
+.pb-sm {
+  padding-bottom: 10px;
+}
+
+button {
+  padding: 5px;
+  font-size: 15px;
+  background-color: var(--in-content-primary-button-background);
+  border-color: var(--in-content-primary-button-background-hover);
+  border-radius: 4px;
+  color: var(--in-content-box-background);
+  margin-inline-end: 5px;
+}
+
+button:hover {
+  background-color: var(--in-content-primary-button-background-hover);
+}

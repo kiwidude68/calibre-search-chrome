@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Calibre Search - Getting Started</title>
+  <link rel="stylesheet" href="/help.css">
+  <link rel="shortcut icon" href="/icons/calibre-search-128.png" type="image/png">
+</head>
+<body>
+  <header>
+    <img src="/icons/calibre-search-128.png" alt="Calibre Search Logo" class="logo">
+  </header>
+  <article>
+    <h1>Getting Started with <br>Calibre Search</h1>
+    <p>
+      Thank you for using Calibre Search! If this is the first time using the
+      extension, this short guide is for you.
+    </p>
+
+    <h2>Prerequisites</h2>
+    <p>
+      <ul>
+        <li>Ensure <a href="https://www.python.org/downloads/">Python v3.5 or later</a> is installed and available on <code>PATH</code>.</li>
+        <li>Ensure <a href="https://calibre-ebook.com/">calibre v5.5 or later</a> is installed and running.</li>
+      </ul>
+    </p>
+
+    <h2>Install the Host Application</h2>
+    <p>
+      The Host Application is necessary for communication between this web browser extension and your calibre library.
+      For non-Windows platforms, see <a href="https://github.com/kiwidude68/calibre-search-app/wiki/Calibre-Search-FAQ">the FAQ</a>.
+    </p>
+    <h3>Windows</h3>
+    <p>
+      <ol>
+        <li class="numbered">Download the latest <code>calibre-search-app-windows.zip</code> from <a href="https://github.com/kiwidude68/calibre-search-app">here</a>.</li>
+        <li class="numbered">Extract to a temporary folder. e.g. <code>C:\calibre-search-app-windows\</code></li>
+        <li class="numbered">Navigate to <code>C:\calibre-search-app-windows\</code></li>
+        <li class="numbered">Right click on <code>install-host.bat</code></li>
+        <li class="numbered">Select <strong>Run as administrator</strong> and confirm any prompts.</li>
+        <li class="numbered">You can now delete your temporary folder above.</li>
+      </ol>
+      The host application should now be installed.
+    </p>
+
+    <h2>Configure options</h2>
+    From the configuration page for this extension you have these options below.
+    <h3>Library name</h3>
+    <p>
+      Specify the calibre library name you want to perform your searches against. 
+      The default name is <code>Calibre Library</code> but you may have a different folder name.
+    </p>
+    <h3>Replace expressions</h3>
+    <p>
+      List words or regular expressions for text to replace before searching. e.g.
+      <ul>
+        <li><code>by</code> - would change "title by author" into "title author".</li>
+        <li><code>/\bby\b/gi</code> - same as above but using a regular expression.</li>
+        <li><code>/\([^\)]*\)/g</code> - would remove anything in parenthesis <code>()</code>.</li>
+      </ul>
+    </p>
+
+    <h2>Having problems?</h2>
+    <p>
+      For more nitty-gritty information and troubleshooting, please read
+      <a href="https://github.com/kiwidude68/calibre-search-app/wiki/Calibre-Search-FAQ">the FAQ</a>.
+    </p>
+  </article>
+</body>
+</html>
