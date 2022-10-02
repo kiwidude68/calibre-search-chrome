@@ -56,7 +56,7 @@ function appConnectionTest() {
 		if (responseObject.status === 'Success') {
 			eNativeAppSuccess.style.display = "block";
 			eNativeAppError.style.display = "none";
-			document.getElementById('nativeAppVersion').innerHTML = chrome.i18n.getMessage("info_appVersion") + ': ' + responseObject.version;
+			document.getElementById('nativeAppVersion').innerText = chrome.i18n.getMessage("info_appVersion") + ': ' + responseObject.version;
 		}
 	}, function (error) {
 		eNativeAppSuccess.style.display = "none";
