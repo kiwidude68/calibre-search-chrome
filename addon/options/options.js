@@ -52,7 +52,11 @@ function appConnectionTest() {
     eNativeAppError.style.display = "none";
 	const sending = chrome.runtime.sendNativeMessage(HOST_APPLICATION, testConnectivityPayload);
 	sending.then(function (response) {
-		const responseObject = JSON.parse(response);
+		// Python script sends JSON that needs parsing. Golang exe sends an immediate JSON object.
+		let responseObject = response;
+		if (typeof response == 'string') {
+			responseObject = JSON.parse(response);
+		}
 		if (responseObject.status === 'Success') {
 			eNativeAppSuccess.style.display = "block";
 			eNativeAppError.style.display = "none";
