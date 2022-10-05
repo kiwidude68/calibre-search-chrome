@@ -1,9 +1,8 @@
 {
-
   "manifest_version": 3,
   "name": "Calibre Search",
-  "description": "Search calibre library using selected text on page",
-  "version": "1.1",
+  "description": "Search your local calibre library using selected text/links.",
+  "version": "1.0.1",
   "homepage_url": "https://github.com/kiwidude68/calibre-search-chrome",
   "default_locale": "en",
 
@@ -36,7 +35,7 @@
       "suggested_key": {
         "default": "Ctrl+Q"
       },
-      "description": "Search default library using selected text"
+      "description": "Search library using selected text"
     }
   },
 

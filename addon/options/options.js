@@ -52,15 +52,15 @@ function appConnectionTest() {
     eNativeAppError.style.display = "none";
 	const sending = chrome.runtime.sendNativeMessage(HOST_APPLICATION, testConnectivityPayload);
 	sending.then(function (response) {
-		// Python script sends JSON that needs parsing. Golang exe sends an immediate JSON object.
-		let responseObject = response;
+		// Python script sends JSON that needs parsing. Golang calibre-search.exe sends an immediate JSON object.
+		let json = response;
 		if (typeof response == 'string') {
-			responseObject = JSON.parse(response);
+			json = JSON.parse(response);
 		}
-		if (responseObject.status === 'Success') {
+		if (json.status === 'Success') {
 			eNativeAppSuccess.style.display = "block";
 			eNativeAppError.style.display = "none";
-			document.getElementById('nativeAppVersion').innerText = chrome.i18n.getMessage("info_appVersion") + ': ' + responseObject.version;
+			document.getElementById('nativeAppVersion').innerText = chrome.i18n.getMessage("info_appVersion") + ': ' + json.version;
 		}
 	}, function (error) {
 		eNativeAppSuccess.style.display = "none";

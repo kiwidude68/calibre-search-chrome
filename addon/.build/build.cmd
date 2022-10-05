@@ -1,7 +1,7 @@
 @echo off
 cd ..
 
-python .build\build.py "calibre-search.zip"
+python .build\build.py
 if %ERRORLEVEL% neq 0 goto :ExitPoint
 
 echo Build completed successfully

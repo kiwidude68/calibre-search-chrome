@@ -9,7 +9,7 @@ All subfolders of the addons folder will be included, unless prefixed with '.'
 i.e. .build and .tx will not be included in the zip.
 '''
 
-import os, sys, zipfile
+import os, sys, zipfile, re
 from glob import glob
 
 def addFolderToZip(myZipFile,folder,exclude=[]):
@@ -40,6 +40,30 @@ def createZipFile(filename,mode,files,exclude=[]):
     myZipFile.close()
     return (1,filename)
 
+def readZipNameVersion():
+    manifestFile = os.path.join(os.getcwd(), 'manifest.json')
+    if not os.path.exists(manifestFile):
+        print('ERROR: No __init__.py file found for this plugin')
+        raise FileNotFoundError(manifestFile)
+    
+    zipFileName = None
+    version = None
+    with open(manifestFile, 'r') as file:
+        content = file.read()
+        nameMatches = re.findall('\s+"name"\:\s*"([^"]*)"', content)
+        if nameMatches: 
+            zipFileName = nameMatches[0].lower().replace(' ','-')
+        else:
+            raise RuntimeError('Could not find plugin name in manifest.json')
+        versionMatches = re.findall('\s+"version"\:\s*"([^"]*)"', content)
+        if versionMatches: 
+            version = versionMatches[0]
+    if not zipFileName or not version:
+        raise RuntimeError('Could not find name or version')
+    zipFileName = '{}-{}.zip'.format(zipFileName,version)
+    print('Build will be zipped to: \'{}\''.format(zipFileName))
+    return zipFileName
+
 def getSubfolders():
     cwd = os.getcwd()
     folders = []
@@ -52,8 +76,13 @@ def getSubfolders():
     return folders
 
 if __name__=="__main__":
-    
-    zipFileName = sys.argv[1]
+
+    zipFileName = readZipNameVersion()
+    fullPath = os.path.join(os.getcwd(), zipFileName)
+    try:
+        os.remove(fullPath)
+    except OSError:
+        pass
 
     files = getSubfolders()
     exclude = ['*.pyc','*~']

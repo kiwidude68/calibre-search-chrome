@@ -127,7 +127,11 @@ function doSearch(query) {
     }
     const sending = chrome.runtime.sendNativeMessage(HOST_APPLICATION, payload);
     sending.then(function onResponse(response) {
-        var json = JSON.parse(response);
+		// Python script sends JSON that needs parsing. Golang exe sends an immediate JSON object.
+		let json = response;
+		if (typeof response == 'string') {
+			json = JSON.parse(response);
+		}
         if (json.status !== 'Success') {
             console.log('Error: Native application response: ' + response);
         }
